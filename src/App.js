@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import {useSelector} from 'react-redux'
+import {useSelector , useDispatch} from 'react-redux'
 
 function App() {
 
@@ -8,23 +8,24 @@ function App() {
     //here we return the whole store
     const reduxStore = useSelector(store =>store)
 
+    //"dispatch" is how we talk to redux from react
+    const dispatch = useDispatch()
+
     //we want one thing
     //here we return one part of the store, count
-    const count = useSelector(store =>    store.count     )
+    const count = useSelector(store =>  store.count     )
   return (
     <div className="App">
 
       <br></br>
       <h2>{JSON.stringify(reduxStore)}</h2>
+
+      {/* Dispatching an action when a button is clicked */}
+      <button onClick={() => dispatch({ type: 'NumberGoUP' })}>Up</button>
+      <button onClick={() => dispatch({ type: 'DECREASE' })}>Decrease</button>
+      {/* Redndering the count from out store */}
       <p>Count is: {count}</p>
 
-
-      <ul>
-        <li>Actions</li>
-        <li>State Logger</li>
-        <li>Spread</li>
-        <li>HTTP</li>
-      </ul>
     </div>
   );
 }
