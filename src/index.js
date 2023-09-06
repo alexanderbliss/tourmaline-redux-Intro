@@ -5,9 +5,9 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 //redux
-import { createStore, combineReducers } from 'redux';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux'
-
+import logger from 'redux-logger';
 // old way | let [count, setCount] = useState(0) //local to component
 //reducer //global for application
 const count = (state = 0, action) => {
@@ -33,6 +33,9 @@ const storeInstance = createStore(
       count,
       elementList
     }
+  ),
+  applyMiddleware(
+    logger
   )
 );
 
