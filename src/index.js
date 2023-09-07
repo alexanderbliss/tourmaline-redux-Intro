@@ -8,7 +8,7 @@ import reportWebVitals from './reportWebVitals';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux'
 import logger from 'redux-logger';
-// old way | let [count, setCount] = useState(0) //local to component
+// let [count, setCount] = useState(0) //local to component
 //reducer //global for application
 const count = (state = 0, action) => {
   console.log('Hey im a reducer', state);
