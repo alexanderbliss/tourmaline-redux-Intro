@@ -24,6 +24,11 @@ const count = (state = 0, action) => {
   return state
 }
 const elementList = (state = [], action) => {
+  if(action.type === 'ADD_ELEMENT') {
+    console.log(`The element was ${action.payload}`);
+    // [ old array contents , new item]
+    return [...state, action.payload]
+  }
   return state
 }
 //store

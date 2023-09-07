@@ -23,6 +23,8 @@ function App() {
       {/* Dispatching an action when a button is clicked */}
       <button onClick={() => dispatch({ type: 'NumberGoUP' })}>Up</button>
       <button onClick={() => dispatch({ type: 'DECREASE' })}>Decrease</button>
+      <button onClick={() => dispatch({ type: 'ADD_ELEMENT', payload: ' hydrogen' })}>Add Element</button>
+
       {/* Redndering the count from out store */}
       <p>Count is: {count}</p>
 
