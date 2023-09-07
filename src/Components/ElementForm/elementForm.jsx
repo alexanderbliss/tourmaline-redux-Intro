@@ -17,7 +17,6 @@ function ElementForm() {
           //clear the form field
           setNewElement('')
       }
-
       return(
         <form onSubmit={handleSubmit}>
         <input
@@ -31,5 +30,4 @@ function ElementForm() {
       )
 
 }
-
 export default ElementForm
